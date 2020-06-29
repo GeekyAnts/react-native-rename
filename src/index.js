@@ -76,8 +76,8 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
     const lC_Ns_CurrentAppName = nS_CurrentAppName.toLowerCase();
 
     program
-      .version('1.0.2')
-      .arguments('<newName>')
+      .version('1.0.3')
+      .arguments('<newName> <bundleID>')
       .option('-b, --bundleID [value]', 'Set custom bundle identifier eg. "com.geekyants.travelapp"')
       .action((newName, bundleID) => {
         const nS_NewName = newName.replace(/\s/g, '');
