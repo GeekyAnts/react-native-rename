@@ -15,7 +15,7 @@ import { foldersAndFiles } from './config/foldersAndFiles';
 import { filesToModifyContent } from './config/filesToModifyContent';
 import { bundleIdentifiers } from './config/bundleIdentifiers';
 
-const devTestRNProject = ''; // For Development eg '/Users/junedomingo/Desktop/RN49'
+const devTestRNProject = ''; // For Development eg '/Users/geekrishabh/Desktop/RN49'
 const __dirname = devTestRNProject || process.cwd();
 const projectName = pjson.name;
 const replaceOptions = {
@@ -76,9 +76,9 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
     const lC_Ns_CurrentAppName = nS_CurrentAppName.toLowerCase();
 
     program
-      .version('2.4.1')
-      .arguments('<newName> <bundleID>')
-      .option('-b, --bundleID [value]', 'Set custom bundle identifier eg. "com.junedomingo.travelapp"')
+      .version('1.0.2')
+      .arguments('<newName>')
+      .option('-b, --bundleID [value]', 'Set custom bundle identifier eg. "com.geekyants.travelapp"')
       .action((newName, bundleID) => {
         const nS_NewName = newName.replace(/\s/g, '');
         const pattern = /^([\p{Letter}\p{Number}])+([\p{Letter}\p{Number}\s]+)$/u;
@@ -90,10 +90,11 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
         if (bundleID) {
           newBundlePath = bundleID.replace(/\./g, '/');
           const id = bundleID.split('.');
-          if (id.length < 2)
+          if (id.length < 2) {
             return console.log(
-              'Invalid Bundle Identifier. Add something like "com.travelapp" or "com.junedomingo.travelapp"'
+              'Invalid Bundle Identifier. Add something like "com.travelapp" or "com.geekyants.travelapp"'
             );
+          }
         }
 
         if (!pattern.test(newName)) {
@@ -235,7 +236,10 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
                       replaceContent(file.regex, file.replacement, newPaths);
                       if (itemsProcessed === filePathsCount) {
                         const oldBundleNameDir = path.join(__dirname, javaFileBase, currentBundleID);
-                        resolve({ oldBundleNameDir, shouldDelete: currentJavaPath !== newJavaPath });
+                        resolve({
+                          oldBundleNameDir,
+                          shouldDelete: currentJavaPath !== newJavaPath,
+                        });
                       }
                     }, 200 * index);
                   }
@@ -274,7 +278,9 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
     if (!process.argv.slice(2).length) program.outputHelp();
   })
   .catch(err => {
-    if (err.code === 'ENOENT') return console.log('Directory should be created using "react-native init"');
+    if (err.code === 'ENOENT') {
+      return console.log('Directory should be created using "react-native init"');
+    }
 
     return console.log('Something went wrong: ', err);
   });

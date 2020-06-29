@@ -1,4 +1,4 @@
-# react-native-rename [![NPM version](https://img.shields.io/npm/v/react-native-rename.svg?style=flat)](https://www.npmjs.com/package/react-native-rename) [![NPM monthly downloads](https://img.shields.io/npm/dm/react-native-rename.svg?style=flat)](https://npm-stat.com/charts.html?package=react-native-rename) [![NPM total downloads](https://img.shields.io/npm/dt/react-native-rename.svg?style=flat)](https://npm-stat.com/charts.html?package=react-native-rename) [![Paypal Donate](https://img.shields.io/badge/paypal-donate-green.svg?style=flat)](https://www.paypal.me/junedomingo)
+# @geekrishabh/rn-rename [![NPM version](https://img.shields.io/npm/v/@geekrishabh/rn-rename.svg?style=flat)](https://www.npmjs.com/package/@geekrishabh/rn-rename) [![NPM monthly downloads](https://img.shields.io/npm/dm/@geekrishabh/rn-rename.svg?style=flat)](https://npm-stat.com/charts.html?package=@geekrishabh/rn-rename) [![NPM total downloads](https://img.shields.io/npm/dt/@geekrishabh/rn-rename.svg?style=flat)](https://npm-stat.com/charts.html?package=@geekrishabh/rn-rename) 
 
 Rename react-native app with just one command
 
@@ -10,12 +10,12 @@ Rename react-native app with just one command
 
 ### Usage
 ```
-$ npx react-native-rename <newName>
+$ npx @geekrishabh/rn-rename <newName>
 ```
 
 > With custom Bundle Identifier (Android only. For iOS, please use Xcode)
 ```
-$ npx react-native-rename <newName> -b <bundleIdentifier>
+$ npx @geekrishabh/rn-rename <newName> -b <bundleIdentifier>
 ```
 
 ### Example
@@ -26,22 +26,21 @@ $ git checkout -b rename-app
 ```
 ##### Then, Rename your app
 ```
-$ npx react-native-rename "Travel App"
+$ npx @geekrishabh/rn-rename "Travel App"
 ```
 > With custom Bundle Identifier
 ```
-$ npx react-native-rename "Travel App" -b com.junedomingo.travelapp
+$ npx @geekrishabh/rn-rename "Travel App" -b com.geekyants.travelapp
 ```
 
 ### Local installation
 With **Yarn**:
 ```
-$ yarn global add react-native-rename
+$ yarn global add @geekrishabh/rn-rename
 ```
 With **npm**:
 ```
-$ npm install react-native-rename -g
+$ npm install @geekrishabh/rn-rename -g
 ```
 
-### Support
-<a href="https://www.buymeacoffee.com/junedomingo"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;"  target="_blank"></a>
+
